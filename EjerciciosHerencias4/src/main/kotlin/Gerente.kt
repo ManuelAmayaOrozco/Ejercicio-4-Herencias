@@ -12,7 +12,7 @@ class Gerente (nombre: String, edad: Int, salarioBase: Double, porcentajeImpuest
     }
 
     override fun toString(): String {
-        return "Nombre: $nombre, Edad: $edad, Salario: ${"%.2f".format(calcularSalario())}€, Bonus: $bonus, Exento Impuestos: ${if (exentoImpuestos) { "Si" } else { "No" }}"
+        return "Nombre: $nombre, Edad: $edad, Salario: ${"%.2f".format(calcularSalario())}€, Bonus: $bonus€, Exento Impuestos: ${if (exentoImpuestos) { "Si" } else { "No" }}"
     }
 
     fun administrar(): String {
