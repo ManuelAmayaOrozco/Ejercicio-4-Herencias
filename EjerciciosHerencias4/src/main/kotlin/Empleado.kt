@@ -1,8 +1,15 @@
-class Empleado (nombre: String, edad: Int, salarioBase: Double, porcentajeImpuestos: Double): Persona(nombre, edad) {
+open class Empleado (nombre: String, edad: Int, var salarioBase: Double, val porcentajeImpuestos: Double = 10.0): Persona(nombre, edad) {
 
-    val salarioBase: Double = salarioBase
+    open fun calcularSalario(): Double {
+        val salario = (salarioBase * porcentajeImpuestos) / 100
+        return salario
+    }
 
-    constructor(nombre: String, edad: Int, salarioBase: Int, porcentajeImpuestos: Double): this(nombre, edad, salarioBase.toInt(), porcentajeImpuestos) {
-        
+    override fun toString(): String {
+        return "Nombre: $nombre, Edad: $edad, Salario: ${"%.2f".format(calcularSalario())}€"
+    }
+
+    fun trabajar(): String {
+       return "$nombre está trabajando en la empresa."
     }
 }
