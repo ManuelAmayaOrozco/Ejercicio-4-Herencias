@@ -7,7 +7,7 @@ fun main() {
     println()
 
     println("-----PRUEBAS CON EMPLEADO-----")
-    val empleado = Empleado("Jorge", 24, 300.0, 25.0)
+    val empleado = Empleado("Jorge", 24, 300, 25)
     println(empleado)
     println(empleado.celebrarCumple())
     println(empleado.trabajar())
