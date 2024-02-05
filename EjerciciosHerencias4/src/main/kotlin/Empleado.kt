@@ -1,4 +1,6 @@
-open class Empleado (nombre: String, edad: Int, var salarioBase: Double, val porcentajeImpuestos: Double = 10.0): Persona(nombre, edad) {
+open class Empleado (nombre: String, edad: Int, val salarioBase: Double, val porcentajeImpuestos: Double = 10.0): Persona(nombre, edad) {
+
+    constructor(nombre: String, edad: Int, salarioBase: Int, porcentajeImpuestos: Int) : this(nombre, edad, salarioBase.toDouble(), porcentajeImpuestos.toDouble())
 
     open fun calcularSalario(): Double {
         val salario = (salarioBase * porcentajeImpuestos) / 100
